@@ -1,16 +1,4 @@
 Rails.application.routes.draw do
-  get 'barcodes/new'
-
-  get 'barcodes/create'
-
-  get 'barcodes/destroy'
-
-  get 'tickets/new'
-
-  get 'tickets/create'
-
-  get 'tickets/destroy'
-
 devise_for :users
   root to: 'listings#index'
 
