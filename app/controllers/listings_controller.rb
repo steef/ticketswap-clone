@@ -26,10 +26,12 @@ class ListingsController < ApplicationController
 
   def update
     @listing.update(listing_params)
+    redirect_to listing_path(@listing)
   end
 
   def destroy
     @listing.destroy
+    redirect_to listings_path, :alert => "Listing deleted"
   end
 
   private
