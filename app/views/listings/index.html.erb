@@ -1,4 +1,4 @@
 <% @listings.each do |listing| %>
-  <h2><%= listing.description.sub(/^./, &:upcase) %></h2>
+  <h2><%= link_to listing.description.sub(/^./, &:upcase), listing_path(listing) %></h2>
   <p>€<%= listing.selling_price %></p>
 <% end %>
