@@ -2,24 +2,34 @@ class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update, :destroy]
 
   def index
+    @listings = Listing.all
   end
 
   def show
   end
 
   def new
+    @listing = Listing.new
   end
 
   def create
+    @listing = Listing.new(listing_params)
+    if @listing.save
+      redirect_to listing_path(@listing)
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
+    @listing.update(listing_params)
   end
 
   def destroy
+    @listing.destroy
   end
 
   private
