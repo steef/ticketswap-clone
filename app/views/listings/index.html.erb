@@ -1,0 +1,5 @@
+<% @listings.each do |listing| %>
+  <h2><%= link_to listing.description.sub(/^./, &:upcase), listing_path(listing) %></h2>
+  <p>€<%= listing.selling_price %></p>
+<% end %>
+<%= link_to "Create listing", new_listing_path , :class => "btn" %>

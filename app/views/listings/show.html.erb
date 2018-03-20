@@ -1,0 +1,9 @@
+<h2><%= @listing.description.sub(/^./, &:upcase) %></h2>
+<p>€<%= @listing.selling_price %></p>
+
+
+<%= link_to "Homepage", root_path %>
+
+<%= link_to "Edit", edit_listing_path(@listing), :class => "btn" %>
+
+<%= link_to "Delete", listing_path(@listing), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
