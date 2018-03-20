@@ -1,2 +1,4 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<% @listings.each do |listing| %>
+  <h2><%= listing.description.sub(/^./, &:upcase) %></h2>
+  <p>€<%= listing.selling_price %></p>
+<% end %>
