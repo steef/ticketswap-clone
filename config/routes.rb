@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'listings/index'
+
+  get 'listings/show'
+
+  get 'listings/new'
+
+  get 'listings/create'
+
+  get 'listings/destroy'
+
   devise_for :users
   root to: 'pages#home'
 
