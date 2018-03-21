@@ -1,9 +1,8 @@
 <h2><%= @listing.description.sub(/^./, &:upcase) %></h2>
 <p>€<%= @listing.selling_price %></p>
-<p>Tickets: <%= @listing.tickets.count %></p>
 
 <% @listing.tickets.each do |ticket| %>
-  <li><%= link_to "Ticket #{ticket.id}", listing_ticket_path(@listing, ticket) %></li>
+  <li><%= link_to "Ticket (id: #{ticket.id})", listing_ticket_path(@listing, ticket) %></li>
 <% end %>
 
 <%= link_to "Homepage", root_path %>
