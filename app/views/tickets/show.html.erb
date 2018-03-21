@@ -4,4 +4,4 @@
 
 <%= link_to "Back to listing", listing_path(@listing), :class => "btn"  %>
 
-
+<%= link_to "Delete ticket", listing_ticket_path(@ticket), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
