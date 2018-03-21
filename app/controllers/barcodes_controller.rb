@@ -15,7 +15,7 @@ class BarcodesController < ApplicationController
     @barcode = Barcode.new(barcode_params)
     @barcode.ticket = @ticket
     if @barcode.save
-      # redirect_to @ticket.barcode >> should redirect to ticket#show
+      redirect_to root_path
     else
       render :new
     end
@@ -42,6 +42,6 @@ class BarcodesController < ApplicationController
   def barcode_params
     # Strong params: We need to whitelist what can be updated by the user
     # Never trust user data
-    params.permit(:ticket_id, :barcode)
+    params.require(:barcode).permit(:ticket_id, :barcode)
   end
 end
