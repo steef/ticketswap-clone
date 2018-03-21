@@ -22,20 +22,11 @@ class BarcodesController < ApplicationController
     end
   end
 
-  def edit
-    @ticket = ticket.find(params[:ticket_id])
-    @barcode = Barcode.find(params[:id])
-  end
-
-  def update
-    @barcode.update(barcode_params)
-    redirect_to ticket_barcode_path(@barcode)
-  end
-
   def destroy
+    @ticket = Ticket.find(params[:ticket_id])
     @barcode = Barcode.find(params[:id])
     @barcode.destroy
-    redirect_to listing_ticket_path
+    redirect_to listing_ticket_path(@ticket.listing_id, @ticket)
   end
 
   private
