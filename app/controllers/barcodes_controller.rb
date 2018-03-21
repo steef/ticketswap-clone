@@ -1,7 +1,7 @@
 class BarcodesController < ApplicationController
 
   def show
-    @ticket = ticket.find(params[:ticket_id])
+    @ticket = Ticket.find(params[:ticket_id])
     @barcode = Barcode.find(params[:id])
   end
 
@@ -15,7 +15,7 @@ class BarcodesController < ApplicationController
     @barcode = Barcode.new(barcode_params)
     @barcode.ticket = @ticket
     if @barcode.save
-      redirect_to @barcode.ticket
+      # redirect_to @ticket.barcode >> should redirect to ticket#show
     else
       render :new
     end
