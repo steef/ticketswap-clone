@@ -1,2 +1,5 @@
-<h1>Barcodes#new</h1>
-<p>Find me in app/views/barcodes/new.html.erb</p>
+<h1>Add barcode to ticket</h1>
+<%= simple_form_for [@ticket, @barcode] do |f| %>
+  <%= f.input :barcode %>
+  <%= f.button :submit, "Add barcode"%>
+<% end %>

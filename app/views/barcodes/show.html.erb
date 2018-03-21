@@ -1,0 +1,5 @@
+<p><%= "EAN-13: #{@barcode.barcode}" %></p>
+
+<%= link_to "Back to ticket", listing_ticket_path(@ticket.listing_id, @ticket), :class => "btn" %>
+
+<%= link_to "Delete barcode", ticket_barcode_path(@ticket), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
