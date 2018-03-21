@@ -1,2 +1,4 @@
-<h1>Tickets#new</h1>
-<p>Find me in app/views/tickets/new.html.erb</p>
+<h1>Add ticket to listing</h1>
+<%= simple_form_for [@listing, @ticket] do |f| %>
+  <%= f.button :submit, class: "main-button" %>
+<% end %>
