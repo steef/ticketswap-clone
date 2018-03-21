@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'tickets/new'
-
-  get 'tickets/create'
-
-  get 'tickets/destroy'
-
 devise_for :users
   root to: 'listings#index'
 

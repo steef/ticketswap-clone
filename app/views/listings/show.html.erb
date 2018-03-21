@@ -1,9 +1,16 @@
 <h2><%= @listing.description.sub(/^./, &:upcase) %></h2>
-<p>€<%= @listing.selling_price %></p>
+<p>€<%= @listing.selling_price %> / ticket</p>
 
+<% @listing.tickets.each do |ticket| %>
+  <li>
+    <%= link_to "Ticket (id: #{ticket.id})", listing_ticket_path(@listing, ticket) %>
+  </li>
+<% end %>
 
-<%= link_to "Homepage", root_path %>
+<%= link_to "Homepage", root_path, :class => "btn"  %>
 
-<%= link_to "Edit", edit_listing_path(@listing), :class => "btn" %>
+<%= link_to "Add ticket", new_listing_ticket_path(@listing, @ticket), :class => "btn" %>
 
-<%= link_to "Delete", listing_path(@listing), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+<%= link_to "Edit listing", edit_listing_path(@listing), :class => "btn" %>
+
+<%= link_to "Delete listing", listing_path(@listing), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
