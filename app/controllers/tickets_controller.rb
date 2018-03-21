@@ -1,5 +1,10 @@
 class TicketsController < ApplicationController
 
+  def show
+    @listing = Listing.find(params[:listing_id])
+    @ticket = Ticket.find(params[:id])
+  end
+
   def new
     @listing = Listing.find(params[:listing_id])
     @ticket = Ticket.new

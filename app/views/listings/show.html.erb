@@ -1,16 +1,13 @@
 <h2><%= @listing.description.sub(/^./, &:upcase) %></h2>
 <p>€<%= @listing.selling_price %></p>
 <p>Tickets: <%= @listing.tickets.count %></p>
-<p>
-  <% @listing.tickets.each do |ticket| %>
-  <li>Ticket (id: <%= ticket.id %>)</li>
-  <% end %>
-</p>
+
+<% @listing.tickets.each do |ticket| %>
+  <li><%= link_to "Ticket #{ticket.id}", listing_ticket_path(@listing, ticket) %></li>
+<% end %>
 
 <%= link_to "Homepage", root_path %>
 
 <%= link_to "Edit", edit_listing_path(@listing), :class => "btn" %>
 
 <%= link_to "Delete", listing_path(@listing), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-
-<!-- Show ticket id in list form  -->
