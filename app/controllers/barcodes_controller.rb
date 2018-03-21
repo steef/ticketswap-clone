@@ -28,7 +28,7 @@ class BarcodesController < ApplicationController
 
   def update
     @barcode.update(barcode_params)
-    redirect_to barcode_path(@barcode)
+    redirect_to ticket_barcode_path(@barcode)
   end
 
   def destroy
