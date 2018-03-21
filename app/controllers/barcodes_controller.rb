@@ -34,7 +34,7 @@ class BarcodesController < ApplicationController
   def destroy
     @barcode = Barcode.find(params[:id])
     @barcode.destroy
-    redirect_to ticket_path
+    redirect_to listing_ticket_path
   end
 
   private
