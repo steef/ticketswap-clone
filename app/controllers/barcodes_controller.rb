@@ -15,7 +15,8 @@ class BarcodesController < ApplicationController
     @barcode = Barcode.new(barcode_params)
     @barcode.ticket = @ticket
     if @barcode.save
-      redirect_to root_path
+      redirect_to listing_ticket_path(@ticket.listing_id, @ticket)
+      # We can still access the listing_id because this is stored inside @ticket
     else
       render :new
     end
