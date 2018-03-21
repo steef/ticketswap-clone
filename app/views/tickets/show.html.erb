@@ -1,6 +1,7 @@
 <h2><%= @listing.description.sub(/^./, &:upcase) %></h2>
 <p>€<%= @listing.selling_price %></p>
-  <li><%= @ticket.id %></li>
+<p><%= "Ticket (id: #{@ticket.id})" %></p>
 
+<%= link_to "Back to listing", listing_path(@listing), :class => "btn"  %>
 
 
