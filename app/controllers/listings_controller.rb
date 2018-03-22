@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @listings = Listing.all
+    @listings = policy_scope(Listing).order(created_at: :desc)
   end
 
   def show
@@ -11,11 +11,13 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    authorize @listing
   end
 
   def create
     @listing = Listing.new(listing_params)
     @listing.user = current_user
+    authorize @listing
     if @listing.save
       redirect_to listing_path(@listing)
     else
@@ -47,5 +49,6 @@ class ListingsController < ApplicationController
   def find_listing
     # Keeping the code DRY
     @listing = Listing.find(params[:id])
+    authorize @listing
   end
 end
