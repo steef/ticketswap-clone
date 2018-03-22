@@ -9,14 +9,14 @@ class TicketsController < ApplicationController
   def new
     @listing = Listing.find(params[:listing_id])
     @ticket = Ticket.new
-    authorize @listing
+    authorize @listing, :edit?
   end
 
   def create
     @listing = Listing.find(params[:listing_id])
     @ticket = Ticket.new(ticket_params)
     @ticket.listing = @listing
-    authorize @listing
+    authorize @listing, :edit?
     if @ticket.save
       redirect_to @ticket.listing
     else
