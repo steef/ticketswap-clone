@@ -3,17 +3,20 @@ class TicketsController < ApplicationController
   def show
     @listing = Listing.find(params[:listing_id])
     @ticket = Ticket.find(params[:id])
+    authorize @ticket # anyone can view
   end
 
   def new
     @listing = Listing.find(params[:listing_id])
     @ticket = Ticket.new
+    authorize @listing
   end
 
   def create
     @listing = Listing.find(params[:listing_id])
     @ticket = Ticket.new(ticket_params)
     @ticket.listing = @listing
+    authorize @listing
     if @ticket.save
       redirect_to @ticket.listing
     else
@@ -22,6 +25,8 @@ class TicketsController < ApplicationController
   end
 
   def destroy
+    @listing = Listing.find(params[:listing_id])
+    authorize @listing
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
     redirect_to listings_path

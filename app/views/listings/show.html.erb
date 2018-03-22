@@ -9,7 +9,9 @@
 
 <%= link_to "Homepage", root_path, :class => "btn"  %>
 
-<%= link_to "Add ticket", new_listing_ticket_path(@listing, @ticket), :class => "btn" %>
+<% if policy(@listing).edit? %>
+  <%= link_to "Add ticket", new_listing_ticket_path(@listing, @ticket), :class => "btn" %>
+<% end %>
 
 <% if policy(@listing).edit? %>
   <%= link_to "Edit listing", edit_listing_path(@listing), :class => "btn" %>

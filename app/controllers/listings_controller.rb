@@ -47,7 +47,7 @@ class ListingsController < ApplicationController
   end
 
   def find_listing
-    # Keeping the code DRY
+    # DRY
     @listing = Listing.find(params[:id])
     authorize @listing
   end

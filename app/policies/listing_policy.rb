@@ -6,7 +6,7 @@ class ListingPolicy < ApplicationPolicy
   end
 
   def create?
-    true # anyone can create a listing
+    true # anyone can create
   end
 
   def update?
