@@ -2,15 +2,21 @@
 <p>€<%= @listing.selling_price %></p>
 <p><%= "Ticket (id: #{@ticket.id})" %></p>
 
-<% @ticket.barcodes.each do |barcode| %>
-  <li>
-    <%= link_to "EAN-13: #{barcode.barcode}", ticket_barcode_path(@ticket, barcode) %>
-  </li>
+
+<% if policy(@listing).edit? %>
+  <% @ticket.barcodes.each do |barcode| %>
+    <li>
+      <%= link_to "EAN-13: #{barcode.barcode}", ticket_barcode_path(@ticket, barcode) %>
+    </li>
+  <% end %>
 <% end %>
 
 <%= link_to "Back to listing", listing_path(@listing), :class => "btn" %>
 
-<%= link_to "Add barcode", new_ticket_barcode_path(@ticket, @barcode), :class => "btn" %>
+<% if policy(@listing).edit? %>
+  <%= link_to "Add barcode", new_ticket_barcode_path(@ticket, @barcode), :class => "btn" %>
+<% end %>
 
-<%= link_to "Delete ticket", listing_ticket_path(@ticket.listing_id, @ticket), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-
+<% if policy(@listing).destroy? %>
+  <%= link_to "Delete ticket", listing_ticket_path(@ticket.listing_id, @ticket), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+<% end %>
