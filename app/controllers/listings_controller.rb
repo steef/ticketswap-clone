@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @listings = policy_scope(Listing).order(created_at: :desc)
+    @listings = policy_scope(Listing).order(created_at: :asc)
   end
 
   def show
