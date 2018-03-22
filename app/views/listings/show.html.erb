@@ -12,11 +12,7 @@
 
   <%= link_to "Add ticket", new_listing_ticket_path(@listing, @ticket), :class => "btn" %>
 
-
-<% if policy(@listing).edit? %>
   <%= link_to "Edit listing", edit_listing_path(@listing), :class => "btn" %>
-<% end %>
 
-<% if policy(@listing).destroy? %>
   <%= link_to "Delete listing", listing_path(@listing), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-<% end %>
+

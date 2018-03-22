@@ -12,6 +12,5 @@
 
 <%= link_to "Add barcode", new_ticket_barcode_path(@ticket, @barcode), :class => "btn" %>
 
-<% if policy(@listing).edit? %>
-  <%= link_to "Delete ticket", listing_ticket_path(@ticket.listing_id, @ticket), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-<% end %>
+<%= link_to "Delete ticket", listing_ticket_path(@ticket.listing_id, @ticket), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+
