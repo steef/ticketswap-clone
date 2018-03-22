@@ -3,5 +3,3 @@
   <p>€<%= listing.selling_price %> / ticket</p>
   <p><%= "Seller: #{listing.user.email.chomp("@ticketswap.com").sub(/^./, &:upcase)}" %></p>
 <% end %>
-
-<%= link_to "Create listing", new_listing_path , :class => "btn" %>
