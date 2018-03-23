@@ -26,7 +26,7 @@ class TicketsController < ApplicationController
 
   def update
     @listing = Listing.find(params[:listing_id])
-    authorize @listing
+    authorize @listing, :create?
     @ticket = Ticket.find(params[:id])
     @ticket.user_id = current_user.id
     @ticket.bought_at_date = Time.now
