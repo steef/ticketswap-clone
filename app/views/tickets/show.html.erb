@@ -10,9 +10,10 @@
     </li>
   <% end %>
 <% end %>
-
-<%= simple_form_for [@listing, @ticket] do |f| %>
-  <%= f.button :submit, "Buy" %>
+<% unless @ticket.user_id %>
+  <%= simple_form_for [@listing, @ticket] do |f| %>
+    <%= f.button :submit, "Buy" %>
+  <% end %>
 <% end %>
 
 <%= link_to "Back to listing", listing_path(@listing), :class => "btn" %>
