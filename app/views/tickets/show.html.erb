@@ -19,7 +19,6 @@
   <p><%= "Bought by: #{@ticket.user.email.chomp("@ticketswap.com").capitalize}" %></p>
 <% end %>
 
-
 <%= link_to "Back to listing", listing_path(@listing), :class => "btn" %>
 
 <% if policy(@listing).edit? %>
