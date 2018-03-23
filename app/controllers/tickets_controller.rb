@@ -30,7 +30,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @ticket.user_id = current_user.id
     @ticket.update(ticket_params)
-    redirect_to listing_path
+    redirect_to listing_path(@listing)
   end
 
   def destroy
