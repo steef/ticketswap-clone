@@ -2,7 +2,6 @@
 <p>€<%= @listing.selling_price %></p>
 <p><%= "Ticket (id: #{@ticket.id})" %></p>
 
-
 <% if policy(@listing).edit? %>
   <% @ticket.barcodes.each do |barcode| %>
     <li>
@@ -10,7 +9,10 @@
     </li>
   <% end %>
 <% end %>
-<% unless @ticket.user_id %>
+
+<% if @ticket.user_id %>
+  <p>Ticket sold</p>
+<% else @ticket.user_id %>
   <%= simple_form_for [@listing, @ticket] do |f| %>
     <%= f.button :submit, "Buy" %>
   <% end %>
