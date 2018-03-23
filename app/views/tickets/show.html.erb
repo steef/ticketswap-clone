@@ -14,7 +14,7 @@
   <%= simple_form_for [@listing, @ticket] do |f| %>
     <%= f.button :submit, "Buy" %>
   <% end %>
-<% else @ticket.user_id %>
+<% else %>
   <p>Ticket sold</p>
 <% end %>
 
