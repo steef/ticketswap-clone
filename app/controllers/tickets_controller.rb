@@ -29,6 +29,7 @@ class TicketsController < ApplicationController
     authorize @listing
     @ticket = Ticket.find(params[:id])
     @ticket.user_id = current_user.id
+    @ticket.bought_at_date = Time.now
     @ticket.update(ticket_params)
     redirect_to listing_path(@listing)
   end
