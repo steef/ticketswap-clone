@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
   def show
     @listing = Listing.find(params[:listing_id])
     @ticket = Ticket.find(params[:id])
-    authorize @ticket # anyone can view unless the ticket is sold
+    authorize @ticket # anyone can view
   end
 
   def new
