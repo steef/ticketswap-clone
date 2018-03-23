@@ -24,6 +24,16 @@ class TicketsController < ApplicationController
     end
   end
 
+  def update
+    @listing = Listing.find(params[:listing_id])
+    authorize @listing
+    @ticket = Ticket.find(params[:id])
+    @ticket.user_id = current_user.id
+    @ticket.bought_at_date = Time.now
+    @ticket.update(ticket_params)
+    redirect_to listing_path(@listing)
+  end
+
   def destroy
     @listing = Listing.find(params[:listing_id])
     authorize @listing
@@ -37,6 +47,6 @@ class TicketsController < ApplicationController
   def ticket_params
     # Strong params: We need to whitelist what can be updated by the user
     # Never trust user data
-    params.permit(:listing_id, :bought_by_user_id, :bought_at_date)
+    params.permit(:listing_id, :user_id, :bought_at_date)
   end
 end

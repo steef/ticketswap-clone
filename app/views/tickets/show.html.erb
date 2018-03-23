@@ -11,6 +11,10 @@
   <% end %>
 <% end %>
 
+<%= simple_form_for [@listing, @ticket] do |f| %>
+  <%= f.button :submit, "Buy" %>
+<% end %>
+
 <%= link_to "Back to listing", listing_path(@listing), :class => "btn" %>
 
 <% if policy(@listing).edit? %>
