@@ -10,12 +10,12 @@
   <% end %>
 <% end %>
 
-<% if @ticket.user_id %>
-  <p>Ticket sold</p>
-<% else @ticket.user_id %>
+<% unless @ticket.user_id %>
   <%= simple_form_for [@listing, @ticket] do |f| %>
     <%= f.button :submit, "Buy" %>
   <% end %>
+<% else @ticket.user_id %>
+  <p>Ticket sold</p>
 <% end %>
 
 <%= link_to "Back to listing", listing_path(@listing), :class => "btn" %>
