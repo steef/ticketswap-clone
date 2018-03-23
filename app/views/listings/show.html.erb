@@ -2,9 +2,15 @@
 <p>€<%= @listing.selling_price %> / ticket</p>
 
 <% @listing.tickets.order("user_id desc").each do |ticket| %>
-  <li>
-    <%= link_to "Ticket (id: #{ticket.id})", listing_ticket_path(@listing, ticket) %>
-  </li>
+  <% if ticket.user_id.nil? %>
+    <li>
+      <%= link_to "Ticket (id: #{ticket.id})", listing_ticket_path(@listing, ticket) %>
+    </li>
+  <% else %>
+    <li>
+      <%= "Ticket (id: #{ticket.id})" %>
+    </li>
+  <% end %>
 <% end %>
 
 <%= link_to "Homepage", root_path, :class => "btn"  %>
