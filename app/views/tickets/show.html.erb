@@ -3,6 +3,12 @@
 <p><%= "Ticket (id: #{@ticket.id})" %></p>
 
 
+<%= simple_form_for [@listing, @ticket] do |f| %>
+  <%= f.input :user_id %>
+  <%= f.input :bought_at_date %>
+  <%= f.button :submit, "Buy" %>
+<% end %>
+
 <% if policy(@listing).edit? %>
   <% @ticket.barcodes.each do |barcode| %>
     <li>
