@@ -12,7 +12,7 @@
 
 <% unless @ticket.user_id %>
   <%= simple_form_for [@listing, @ticket] do |f| %>
-    <%= f.button :submit, "Buy" %>
+    <%= f.button :submit, "Buy e-ticket" %>
   <% end %>
 <% else %>
   <p>Ticket sold</p>
