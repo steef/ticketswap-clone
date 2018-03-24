@@ -27,6 +27,3 @@ end
 
 # After ticket is bought for the second time, it can't be sold again
 # Solution > Barcode.first / last check needs to be for specific user
-
-# Ticket can't be placed online for the first time
-# Solution > Needs to be bigger if else with if ticket isn't found, its true
