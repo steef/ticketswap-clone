@@ -6,6 +6,12 @@ class Barcode < ApplicationRecord
 
   def last_buyer
     @barcode = Barcode.find_by barcode: barcode
-    @barcode.ticket.user_id == @barcode.ticket.listing
+    unless @barcode.nil?
+      @ticket = Ticket.find_by id: ticket_id
+      @listing = Listing.find_by id: @ticket.listing_id
+      @barcode.ticket.user_id == @listing.user_id
+    else
+      false
+    end
   end
 end
