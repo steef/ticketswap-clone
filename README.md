@@ -39,8 +39,8 @@ bundle install
 3. Create db and migrate schema
 
 ```
-rake db:create
-rake db:migrate
+rails db:create
+rails db:migrate
 ```
 
 4. Now run the application
