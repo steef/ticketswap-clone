@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
   before_action :find_ticket, only: [:show, :update, :destroy] # DRY
 
   def show
-    authorize @ticket
+    authorize @ticket # anyone can view
   end
 
   def new
