@@ -1,5 +1,5 @@
 <h2><%= @listing.description.sub(/^./, &:upcase) %></h2>
-<p><%= "€#{listing.selling_price} / ticket" %></p>
+<p><%= "€#{@listing.selling_price} / ticket" %></p>
 
 <% @listing.tickets.order("user_id desc").each do |ticket| %>
   <% if ticket.user_id.nil? %>
