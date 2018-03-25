@@ -1,19 +1,17 @@
 class TicketsController < ApplicationController
+  before_action :find_listing, only: [:show, :new, :create, :update, :destroy] # DRY
+  before_action :find_ticket, only: [:show, :update, :destroy] # DRY
 
   def show
-    @listing = Listing.find(params[:listing_id])
-    @ticket = Ticket.find(params[:id])
     authorize @ticket # anyone can view
   end
 
   def new
-    @listing = Listing.find(params[:listing_id])
-    @ticket = Ticket.new
     authorize @listing, :edit?
+    @ticket = Ticket.new
   end
 
   def create
-    @listing = Listing.find(params[:listing_id])
     @ticket = Ticket.new(ticket_params)
     @ticket.listing = @listing
     authorize @listing, :edit?
@@ -25,9 +23,7 @@ class TicketsController < ApplicationController
   end
 
   def update
-    @listing = Listing.find(params[:listing_id])
     authorize @listing, :create?
-    @ticket = Ticket.find(params[:id])
     @ticket.user_id = current_user.id
     @ticket.bought_at_date = Time.now
     @ticket.update(ticket_params)
@@ -35,9 +31,7 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-    @listing = Listing.find(params[:listing_id])
     authorize @listing
-    @ticket = Ticket.find(params[:id])
     @ticket.destroy
     redirect_to listings_path
   end
@@ -48,5 +42,13 @@ class TicketsController < ApplicationController
     # Strong params: We need to whitelist what can be updated by the user
     # Never trust user data
     params.permit(:listing_id, :user_id, :bought_at_date)
+  end
+
+  def find_listing
+    @listing = Listing.find(params[:listing_id])
+  end
+
+  def find_ticket
+    @ticket = Ticket.find(params[:id])
   end
 end
