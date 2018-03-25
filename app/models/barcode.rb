@@ -11,7 +11,13 @@ class Barcode < ApplicationRecord
     if @barcode_first.nil?
       true
     else
-      if @barcode_first == @barcode_last
+      @ticket = Ticket.find_by id: ticket_id
+      @listing = Listing.find_by id: @ticket.listing_id
+      @listing_all = Listing.where(user_id: @listing.user_id)
+      @ticket_all = Ticket.where(listing_id: @listing_all.ids)
+      @barcode_all = Barcode.where(ticket_id: @ticket_all.ids)
+
+      if @barcode_all.count < 1
         # checks if first/last update are same
         @ticket = Ticket.find_by id: ticket_id
         @listing = Listing.find_by id: @ticket.listing_id
