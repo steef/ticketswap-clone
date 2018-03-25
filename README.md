@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Below are the setup steps to run a Ruby on Rails application on your system.
 
-1. Make sure Ruby is installed on your system. Fire command prompt and run command:
+1. Make sure Ruby is installed. Fire command prompt and run command:
 
 ```
 ruby -v
