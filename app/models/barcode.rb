@@ -16,7 +16,7 @@ class Barcode < ApplicationRecord
       @listing = Listing.find_by id: @ticket.listing_id
       @listing_all = Listing.where(user_id: @listing.user_id)
       @ticket_all = Ticket.where(listing_id: @listing_all.ids)
-      @barcode_all = Barcode.where(ticket_id: @ticket_all.ids)
+      @barcode_all = Barcode.where(ticket_id: @ticket_all.ids).where(barcode: barcode)
       # goes trough all listings > tickets > barcodes of current user
       # and triers to find if current barcode is found
       if @barcode_all.count < 1
