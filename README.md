@@ -22,7 +22,7 @@ ruby -v
 rails -v
 ```
 
-Once done, now
+Once done
 
 1. Clone git repository
 
