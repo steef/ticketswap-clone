@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
-  before_action :find_listing, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index # only index is accessible without login in
+  before_action :find_listing, only: [:show, :edit, :update, :destroy] # DRY
 
   def index
     @listings = policy_scope(Listing).order(created_at: :asc)
@@ -47,7 +47,6 @@ class ListingsController < ApplicationController
   end
 
   def find_listing
-    # DRY
     @listing = Listing.find(params[:id])
     authorize @listing
   end
