@@ -87,7 +87,7 @@ brew install rbenv
 Again, quit all your terminal windows and restart.
 
 
-Now, you are ready to install the latest ruby version, and set it as the default version.
+Now, you are ready to install version 2.4.3 of ruby, and set it as the default version.
 
 Run this command, it will **take a while (5-10 minutes)**
 
