@@ -112,6 +112,8 @@ You should see something starting with `ruby 2.4.3p`.
 
 ### Installing Rails
 
+Run the following command to install rails:
+
 ```
 gem install rails -v 5.1.4
 ```
