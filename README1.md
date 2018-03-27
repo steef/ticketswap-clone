@@ -6,7 +6,7 @@ A simplified version of TicketSwap
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Command Line Tools
+### Installing Command Line Tools
 
 Open your Terminal and run:
 
