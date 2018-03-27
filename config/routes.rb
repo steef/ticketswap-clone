@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/profile'
-
 devise_for :users
   root to: 'listings#index'
 
@@ -13,4 +11,6 @@ devise_for :users
     resources :barcodes do
     end
   end
+
+  get '/profile', to: "users#profile", as: :profile
 end
