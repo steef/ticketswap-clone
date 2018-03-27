@@ -141,7 +141,7 @@ Run the following command to install rails:
 gem install rails -v 5.1.4
 ```
 
-Restart your terminal (⌘ + Q) Then, check setup with:
+Restart your terminal (⌘ + Q) Then, check version with:
 
 ```
 rails --version
