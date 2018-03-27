@@ -11,4 +11,6 @@ devise_for :users
     resources :barcodes do
     end
   end
+
+  get '/profile', to: "users#profile", as: :profile
 end
