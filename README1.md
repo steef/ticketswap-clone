@@ -168,3 +168,4 @@ Now run the application
 ```
 rails s
 ```
+Create an account using one of the accounts from the dataset and start using the website 🎉
