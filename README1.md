@@ -169,7 +169,7 @@ Now run the application
 rails s
 ```
 
-And go to the following address
+Open your browser and go to the following address
 
 ```
 http://localhost:3000/
