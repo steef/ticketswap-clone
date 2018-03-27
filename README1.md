@@ -143,33 +143,33 @@ brew install yarn
 
 ### Setup Project
 
-Clone git repository
+Clone git repository.
 
 ```
 git clone https://github.com/Stefanode/ticketswap-clone.git
 ```
 
-Install all dependencies
+Install all dependencies.
 
 ```
 bundle install
 yarn install
 ```
 
-Create db and migrate schema
+Create db and migrate schema.
 
 ```
 rails db:create
 rails db:migrate
 ```
 
-Now run the application
+Now run the application.
 
 ```
 rails s
 ```
 
-Open your browser and go to the following address
+Open your browser and go to the following address.
 
 ```
 http://localhost:3000/
