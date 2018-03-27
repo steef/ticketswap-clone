@@ -22,8 +22,6 @@ If you'll receive the following message, you can just skip this step and go to n
 
 Otherwise, it will open a window asking you if you want to install some software. Accept and wait. If it fails, try again the command line above, sometimes the Apple servers are overloaded.
 
-![](images/xcode-select-install.png)
-
 Wait till it's finished, because You'll need the command line tools installed for the next step.
 
 ### Installing Homebrew
