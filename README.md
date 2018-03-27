@@ -116,22 +116,6 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 
 And check the version again.
 
-### Installing Rails
-
-Run the following command to install rails:
-
-```
-gem install rails -v 5.1.4
-```
-
-Restart your terminal (⌘ + Q) Then, check setup with:
-
-```
-rails --version
-```
-
-You should see something starting with rails 5.1.4.
-
 ### Installing Postgresql
 
 Let's install Postgresql, an open-source robust and production-ready database.
@@ -149,6 +133,21 @@ Let's install Yarn, a fast and secure dependency management.
 brew install yarn
 ```
 
+### Installing Rails
+
+Run the following command to install rails:
+
+```
+gem install rails -v 5.1.4
+```
+
+Restart your terminal (⌘ + Q) Then, check setup with:
+
+```
+rails --version
+```
+
+You should see something starting with rails 5.1.4.
 ### Setup Project
 
 Clone git repository using the following command:
