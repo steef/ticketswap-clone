@@ -108,7 +108,7 @@ Then **restart** your Terminal again (close it and reopen it).
 ruby -v
 ```
 
-You should see something starting with `ruby 2.4.3p`, otherwhise run the following command:
+You should see something starting with `ruby 2.4.3p`. If not, run the following command:
 
 ```
 export PATH="$HOME/.rbenv/shims:$PATH"
