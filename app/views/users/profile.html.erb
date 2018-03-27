@@ -1,2 +1,4 @@
 <h1>My profile</h1>
-<p>Find me in app/views/users/profile.html.erb</p>
+<p><%= "Name: #{@user.email.chomp("@ticketswap.com").capitalize}" %></p>
+<p><%= "Email: #{@user.email}" %></p>
+<%= link_to "Edit", edit_user_registration_path %>
