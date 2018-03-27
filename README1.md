@@ -6,6 +6,26 @@ A simplified version of TicketSwap
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+### Command Line Tools
+
+Open your Terminal and run:
+
+```
+xcode-select --install
+```
+
+If you have get following message, you can just skip this step and go to next step.
+
+```
+# command line tools are already installed, use "Software Update" to install updates
+```
+
+Otherwise, it will open a window asking you if you want to install some software. Accept and wait. If it fails, try again the command line above, sometimes the Apple servers are overloaded.
+
+![](images/xcode-select-install.png)
+
+Wait till it's finished, because You'll need the command line tools installed for the next step.
+
 ### Installing Homebrew
 
 On Mac, you need to install [Homebrew](http://brew.sh/) which is a Package Manager.
