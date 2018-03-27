@@ -114,7 +114,7 @@ You should see something starting with `ruby 2.4.3p`. If not, run the following 
 export PATH="$HOME/.rbenv/shims:$PATH"
 ```
 
-And check your ruby version again.
+And check the version again.
 
 ### Installing Rails
 
