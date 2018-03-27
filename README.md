@@ -108,7 +108,7 @@ Then **restart** your Terminal again (close it and reopen it).
 ruby -v
 ```
 
-You should see something starting with `ruby 2.4.3p`. If not, run the following command:
+You should see something starting with `ruby 2.4.3`. If not, run the following command:
 
 ```
 export PATH="$HOME/.rbenv/shims:$PATH"
@@ -135,7 +135,7 @@ brew install yarn
 
 ### Installing Rails
 
-Run the following command to install rails:
+Run the following command to install Rails version 5.1.4.
 
 ```
 gem install rails -v 5.1.4
@@ -148,6 +148,7 @@ rails --version
 ```
 
 You should see something starting with rails 5.1.4.
+
 ### Setup Project
 
 Clone git repository using the following command:
