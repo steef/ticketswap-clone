@@ -154,6 +154,7 @@ Clone git repository using the following command:
 
 ```
 git clone https://github.com/Stefanode/ticketswap-clone.git
+cd ticketswap-clone
 ```
 
 Install all dependencies.
