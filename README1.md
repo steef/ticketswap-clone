@@ -14,7 +14,7 @@ Open your Terminal and run:
 xcode-select --install
 ```
 
-If you have get following message, you can just skip this step and go to next step.
+If you'll receive the following message, you can just skip this step and go to next step.
 
 ```
 # command line tools are already installed, use "Software Update" to install updates
