@@ -24,7 +24,7 @@ class TicketsController < ApplicationController
 
   def update
     authorize @listing, :create?
-    if @listing.user_id = current_user.id
+    if @listing.user_id == current_user.id
       redirect_to listing_ticket_path(@ticket.listing_id, @ticket), :alert => "You can't buy your own ticket"
     else
       @ticket.user_id = current_user.id
