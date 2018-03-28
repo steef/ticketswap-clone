@@ -24,10 +24,13 @@ class TicketsController < ApplicationController
 
   def update
     authorize @listing, :create?
-    @ticket.user_id = current_user.id
-    @ticket.bought_at_date = Time.now
-    @ticket.update(ticket_params)
-    redirect_to listing_path(@listing)
+    if @listing.user_id = current_user.id
+    else
+      @ticket.user_id = current_user.id
+      @ticket.bought_at_date = Time.now
+      @ticket.update(ticket_params)
+      redirect_to listing_path(@listing)
+    end
   end
 
   def destroy
