@@ -18,6 +18,6 @@ class ListingPolicy < ApplicationPolicy
   end
 
   def my_listings?
-    true # still needs a fix
+    true # only listing of specific user will be displayed via controller
   end
 end

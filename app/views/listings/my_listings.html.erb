@@ -1,15 +1,13 @@
-<h2>My listings</h2>
+<h1>My listings</h1>
 <% @my_listings.each do |listing| %>
   <% unless listing.tickets.count - listing.tickets.count(:user_id) == 0 %>
     <h3><%= link_to "#{listing.tickets.count - listing.tickets.count(:user_id)} x #{listing.description.sub(/^./, &:upcase)}", listing_path(listing) %></h3>
     <p><%= "€#{listing.selling_price} / ticket" %></p>
-    <%= listing.tickets.where(user_id: nil) %>
   <% end %>
 <% end %>
 <% @my_listings.each do |listing| %>
   <% if listing.tickets.count - listing.tickets.count(:user_id) == 0 %>
     <h3><%= link_to "#{listing.tickets.count} x #{listing.description.sub(/^./, &:upcase)} sold", listing_path(listing) %></h3>
     <p><%= "€#{listing.selling_price} / ticket" %></p>
-    <p><%= "Seller: #{listing.user.email.chomp("@ticketswap.com").capitalize}" %></p> <!-- only showing name user instead of whole email -->
   <% end %>
 <% end %>
