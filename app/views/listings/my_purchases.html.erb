@@ -1,0 +1,6 @@
+<h1>My purchases</h1>
+<% @my_tickets.each do |ticket| %>
+  <h3><%= link_to "1 x #{ticket.listing.description.sub(/^./, &:upcase)}", listing_path(ticket.listing) %></h3>
+    <p><%= "€#{ticket.listing.selling_price} / ticket" %></p>
+    <p><%= "Seller: #{ticket.listing.user.email.chomp("@ticketswap.com").capitalize}" %></p> <!-- only showing name user instead of whole email -->
+<% end %>

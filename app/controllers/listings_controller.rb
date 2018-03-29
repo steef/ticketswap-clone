@@ -43,6 +43,12 @@ class ListingsController < ApplicationController
     authorize @my_listings
   end
 
+  def my_purchases
+    @my_tickets = Ticket.where(user_id: current_user.id)
+    @listings = policy_scope(Listing)
+    authorize @listings
+  end
+
   private
 
   def listing_params
