@@ -38,6 +38,11 @@ class ListingsController < ApplicationController
     redirect_to listings_path, :alert => "Listing deleted"
   end
 
+  def my_listings
+    @my_listings = policy_scope(Listing).where(user_id: current_user.id)
+    authorize @my_listings
+  end
+
   private
 
   def listing_params
