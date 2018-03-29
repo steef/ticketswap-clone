@@ -18,6 +18,6 @@ class ListingPolicy < ApplicationPolicy
   end
 
   def my_listings?
-    true
+    true # still needs a fix
   end
 end

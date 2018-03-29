@@ -1,3 +1,9 @@
 <% @my_listings.each do |listing| %>
-<p><%= "#{listing.description.sub(/^./, &:upcase)}" %></p>
+  <h3><%= link_to "#{listing.tickets.count - listing.tickets.count(:user_id)} x #{listing.description.sub(/^./, &:upcase)}", listing_path(listing) %></h3>
+  <p><%= "€#{listing.selling_price} / ticket" %></p>
+  <% if listing.tickets.where(user_id: nil) %>
+    <p>Available</p>
+  <% else %>
+    <p>Sold</p>
+  <% end %>
 <% end %>

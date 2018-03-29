@@ -41,7 +41,6 @@ class ListingsController < ApplicationController
   def my_listings
     @my_listings = policy_scope(Listing).where(user_id: current_user.id)
     authorize @my_listings # still need to fix
-
   end
 
   private
