@@ -18,6 +18,10 @@ class ListingPolicy < ApplicationPolicy
   end
 
   def my_listings?
-    true # only listing of specific user will be displayed via controller
+    true # only listing of specific user will be generated
+  end
+
+  def my_purchases?
+    true # only listing of specific user will be generated
   end
 end
