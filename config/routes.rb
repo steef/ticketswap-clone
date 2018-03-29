@@ -13,4 +13,5 @@ devise_for :users
   end
 
   get '/profile', to: "users#profile", as: :profile
+  get '/my-listings', to: "listings#my_listings", as: :my_listings
 end

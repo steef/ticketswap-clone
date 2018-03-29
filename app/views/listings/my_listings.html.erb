@@ -1,0 +1,3 @@
+<% @my_listings.each do |listing| %>
+<p><%= "#{listing.description.sub(/^./, &:upcase)}" %></p>
+<% end %>

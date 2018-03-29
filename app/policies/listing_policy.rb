@@ -16,4 +16,8 @@ class ListingPolicy < ApplicationPolicy
   def destroy?
     record.user == user # only creator can destroy
   end
+
+  def my_listings?
+    true
+  end
 end
