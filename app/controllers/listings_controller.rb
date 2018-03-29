@@ -43,6 +43,10 @@ class ListingsController < ApplicationController
     authorize @my_listings
   end
 
+  def my_purchases
+    authorize @my_purchases
+  end
+
   private
 
   def listing_params
