@@ -8,9 +8,8 @@
 <% @my_listings.each do |listing| %>
   <% if listing.tickets.count - listing.tickets.count(:user_id) == 0 %>
     <h3><%= link_to "#{listing.tickets.count} x #{listing.description.sub(/^./, &:upcase)} sold", listing_path(listing) %></h3>
-    <p><%= "€#{listing.selling_price} / ticket" %></p>
     <% listing.tickets.each do |ticket| %>
-      <p><%= link_to "Ticket (id: #{ticket.id}) bought by #{ticket.user.email.chomp("@ticketswap.com").capitalize}", listing_ticket_path(listing, ticket) %></p>
+      <li><%= link_to "Ticket (id: #{ticket.id}) bought by #{ticket.user.email.chomp("@ticketswap.com").capitalize} for €#{listing.selling_price}", listing_ticket_path(listing, ticket) %></li>
     <% end %>
   <% end %>
 <% end %>
