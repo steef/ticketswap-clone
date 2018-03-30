@@ -3,5 +3,4 @@
   <h3><%= link_to "1 x #{ticket.listing.description.sub(/^./, &:upcase)}", listing_path(ticket.listing) %></h3>
   <p><%= "€#{ticket.listing.selling_price} / ticket" %></p>
   <p><%= "Seller: #{ticket.listing.user.email.chomp("@ticketswap.com").capitalize}" %></p> <!-- only showing name user instead of whole email -->
-  <p><%= "#{ticket.bought_at_date.strftime("%A, %B %d, %Y")}" %></p>
 <% end %>
