@@ -1,14 +1,15 @@
 <h2><%= @listing.description.sub(/^./, &:upcase) %></h2>
 <p><%= "€#{@listing.selling_price} / ticket" %></p>
 
+<% i = 0  %>
 <% @listing.tickets.order("user_id desc").each do |ticket| %>
   <% if ticket.user_id.nil? %>
     <li>
-      <%= link_to "Ticket (id: #{ticket.id})", listing_ticket_path(@listing, ticket) %>
+      <%= link_to "Ticket #{i += 1}", listing_ticket_path(@listing, ticket) %>
     </li>
   <% else %>
     <li>
-      <%= link_to "Ticket (id: #{ticket.id}) sold", listing_ticket_path(@listing, ticket) %>
+      <%= link_to "Ticket #{i += 1} sold", listing_ticket_path(@listing, ticket) %>
     </li>
   <% end %>
 <% end %>
